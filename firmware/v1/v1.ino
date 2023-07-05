@@ -81,7 +81,7 @@ void setup() {
   //ota end -------
 }
 void sendWaterLevel(){
-  http.begin(client, "http://192.168.111.83:25565/rooms/?token=1234&water=20&type=change");  // Specify the URL
+  http.begin(client, "http://x.x.x.x:25565/rooms/?token=1234&water=20&type=change");  // Specify the URL
   
     int httpCode = http.GET();  // Perform the GET request
 
