@@ -50,6 +50,11 @@ body {
     font-size: 18px;
     font-weight: 500;
 }
+@media screen and (max-width:1200px) {
+          .container{
+            margin:50px;
+            }
+        }
 @media screen and (max-width:600px) {
     .container{
         margin: 10px;
