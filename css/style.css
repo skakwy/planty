@@ -51,9 +51,9 @@ body {
     font-weight: 500;
 }
 @media screen and (max-width:1200px) {
-          .container{
-            margin:50px;
-            }
+         .container{
+        margin: 10px;
+    }
         }
 @media screen and (max-width:600px) {
     .container{
