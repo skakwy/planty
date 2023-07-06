@@ -8,7 +8,6 @@
     <title>Planty - Skakwy</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-      
         .mainContent {
             width: 100%;
             margin-top: 100px;
@@ -72,24 +71,31 @@
             .catchText {
                 font-size: 25px;
             }
-           
-            .mainContent{
+
+            .mainContent {
                 display: block;
             }
-            
-           .mainContent .left{
+
+            .mainContent .left {
                 width: 100%;
 
-           }
-        .mainPic{
-            position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width:70vw;
+            }
+
+            .mainPic {
+                position: absolute;
+                z-index: -1;
+                /* center div */
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0.3;
+                width: 70vw;
+            }
+           
         }
     </style>
+
+
 </head>
 
 <body>
@@ -117,10 +123,10 @@
                         d="M7.69446 6.28374C9.39815 8.16292 11.3704 9.30417 13.6111 9.70749H14.9938C14.989 9.60498 14.9827 9.50293 14.9748 9.40134C14.7919 7.06171 13.7587 4.96376 11.875 3.10749C9.86572 1.12749 7.58332 0.0916575 5.02779 0C5.10185 2.31 5.99074 4.40458 7.69446 6.28374Z"
                         fill="#569F50" />
                 </svg>
-                <button>Home</button>
-                <button onclick="window.open('Dashboard.html', '_self')">Dashboard</button>
-                <button onclick="window.open('contact.html','_self')">Contact</button>
-                <button onclick="window.open('shop.html','_self')">Shop</button>
+                <button id="homeButton">Home</button>
+                <button id="dashboardButton" osnclick="window.open('Dashboard.html', '_self')">Dashboard</button>
+                <button id="contactButton" onclick="window.open('contact.html','_self')">Contact</button>
+                <button id="shopButton" onclick="window.open('shop.html','_self')">Shop</button>
             </div>
             <div class="right">
                 <button>Log in</button>

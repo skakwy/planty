@@ -52,7 +52,7 @@ body {
 }
 @media screen and (max-width:1200px) {
          .container{
-        margin: 10px;
+        margin: 30px;
     }
         }
 @media screen and (max-width:600px) {
@@ -64,11 +64,24 @@ body {
     }
 
     .topBar .left{
-        gap: 0px;
-        justify-content: center;
+        justify-content: space-between;
+
         align-items: center;
+        width: 100%;
+        
+    }
+    .topBar .left button{
+        padding: 0px;
+        font-weight: 900;
+        font-size: 20px;
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .topBar .right{
+        display: none;
+    }
+    button[id="shopButton"]{
         display: none;
     }
 }
