@@ -10,7 +10,16 @@ Key Features:
 - Automatic Watering: When connected to a self-made water pump using an ESP8266 and custom firmware, the plants are automatically watered, and users can conveniently monitor the water level through their dashboard.
 - Plant Health Monitoring: The software enables real-time monitoring of plant health, including vital parameters such as soil moisture (planned), temperature (planned), and light levels (planned). Alerts and notifications are provided in case of unfavorable conditions or potential plant issues.
 - Data Synchronization: The C++ server and React Native app synchronize data seamlessly, ensuring that plant information, watering schedules, and health data are always up to date across multiple devices.
-´´´diff
-- **For now there will only be an option for self hosting. Public server will come in a future release**
-´´´
 The combination of the C++ server and React Native app offers a powerful and user-friendly solution for plant enthusiasts to effectively manage their plant care routines. Whether you are a beginner or an experienced gardener, this software provides the tools and insights needed to keep your plants healthy and thriving.
+
+```diff
+-**For now there will only be an option for self hosting. Public server will come in a future release**
+```
+
+| os | Supported |
+| ------------- | ------------- |
+| Ios  | - [x]  |
+| Android  | -[x] |
+| Web  | -[x]  |
+| mac  | -[]  |
+| windows  | -[]  |
