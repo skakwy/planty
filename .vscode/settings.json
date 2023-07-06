@@ -79,7 +79,8 @@
         "filesystem": "cpp",
         "map": "cpp",
         "source_location": "cpp",
-        "*.inc": "cpp"
+        "*.inc": "cpp",
+        "thread": "cpp"
     },
     "sqltools.connections": [
         {

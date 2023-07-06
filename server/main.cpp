@@ -312,7 +312,27 @@ Json::Value updatePlants(string type, string state, bool byType)
 
     return jsonResponse;
 }
+Json::Value addRoom(string roomName){
+    Json::Value jsonResponse;
+    // Clean up string
+    while (!roomName.empty() && std::isspace(roomName.back()))
+    {
+        roomName.pop_back();
+    }
+    roomName = toLowercase(roomName);
+    std::string query = "INSERT INTO rooms (name, last_updated, flowers) VALUES ('" + roomName + "', '" + getCurrentTime() + "', '[]');";
+    const char *selectDataSQL = query.c_str();
+    char *errMsg;
 
+    int rc = sqlite3_exec(db, selectDataSQL, ExecCallbackJsonResponse, &jsonResponse, &errMsg);
+    if (rc == SQLITE_OK)
+    {
+        jsonResponse["success"] = "true";
+    }
+
+    return jsonResponse;
+
+}
 std::string generateResponse(std::map<string, string> argumentList, string request)
 {
     string requestType = request.substr(request.find("GET") + 5, request.find_first_of("?"));
