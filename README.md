@@ -12,10 +12,8 @@ Key Features:
 - Data Synchronization: The C++ server and React Native app synchronize data seamlessly, ensuring that plant information, watering schedules, and health data are always up to date across multiple devices.
 The combination of the C++ server and React Native app offers a powerful and user-friendly solution for plant enthusiasts to effectively manage their plant care routines. Whether you are a beginner or an experienced gardener, this software provides the tools and insights needed to keep your plants healthy and thriving.
 
-```diff
--**For now there will only be an option for self hosting. Public server will come in a future release**
-```
 
+**!!For now there will only be an option for self hosting. Public server will come in a future release!!**
 | os | Supported |
 | ------------- | ------------- |
 | Ios  | - [x]  |
