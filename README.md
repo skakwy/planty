@@ -11,10 +11,13 @@ Key Features:
 - Plant Health Monitoring: The software enables real-time monitoring of plant health, including vital parameters such as soil moisture (planned), temperature (planned), and light levels (planned). Alerts and notifications are provided in case of unfavorable conditions or potential plant issues.
 - Data Synchronization: The C++ server and React Native app synchronize data seamlessly, ensuring that plant information, watering schedules, and health data are always up to date across multiple devices.
 The combination of the C++ server and React Native app offers a powerful and user-friendly solution for plant enthusiasts to effectively manage their plant care routines. Whether you are a beginner or an experienced gardener, this software provides the tools and insights needed to keep your plants healthy and thriving.
-
+<detials>
+<summary>About - complexity</summary>
+This project is supposed to be a learner project for myself in first place. I'm trying to do as much as possible by myself and not use that much libraries. A version with exisisting database software like mongoDB, firebase etc. will follow after finishing the rather native and more complex server thats entirely made by myself.
+</details>
 
 **!!For now there will only be an option for self hosting. Public server will come in a future release!!**
-| os | Supported |
+| os | Supported(planned) |
 | ------------- | ------------- |
 | Ios  | - [x]  |
 | Android  | -[x] |

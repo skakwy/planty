@@ -312,7 +312,8 @@ Json::Value updatePlants(string type, string state, bool byType)
 
     return jsonResponse;
 }
-Json::Value addRoom(string roomName){
+Json::Value addRoom(string roomName)
+{
     Json::Value jsonResponse;
     // Clean up string
     while (!roomName.empty() && std::isspace(roomName.back()))
@@ -320,23 +321,40 @@ Json::Value addRoom(string roomName){
         roomName.pop_back();
     }
     roomName = toLowercase(roomName);
-    std::string query = "INSERT INTO rooms (name, last_updated, flowers) VALUES ('" + roomName + "', '" + getCurrentTime() + "', '[]');";
-    const char *selectDataSQL = query.c_str();
+    std::string query = "SELECT * FROM rooms WHERE LOWER(name) = '" + roomName + "';";
+    const char *selectDataSQL1 = query.c_str();
     char *errMsg;
 
-    int rc = sqlite3_exec(db, selectDataSQL, ExecCallbackJsonResponse, &jsonResponse, &errMsg);
+    int rc = sqlite3_exec(db, selectDataSQL1, ExecCallbackJsonResponse, &jsonResponse, &errMsg);
+    std::cout << jsonResponse << std::endl;
+    if(jsonResponse != Json::Value::null){
+        std::cout << "room already exists" << std::endl;
+        jsonResponse.clear();
+        jsonResponse["success"] = "false";
+        jsonResponse["error"] = "room already exists";
+        return jsonResponse;
+    }
+    roomName = toLowercase(roomName);
+    query = "INSERT INTO rooms (name, last_updated, flowers) VALUES ('" + roomName + "', '" + getCurrentTime() + "', '[]');";
+    const char *selectDataSQL = query.c_str();
+    *errMsg;
+
+     rc = sqlite3_exec(db, selectDataSQL, ExecCallbackJsonResponse, &jsonResponse, &errMsg);
     if (rc == SQLITE_OK)
     {
         jsonResponse["success"] = "true";
     }
 
     return jsonResponse;
-
 }
 std::string generateResponse(std::map<string, string> argumentList, string request)
 {
+
+
     string requestType = request.substr(request.find("GET") + 5, request.find_first_of("?"));
     requestType = requestType.substr(0, requestType.find("/"));
+    requestType = requestType.substr(0, requestType.find("?"));
+
     // standard response
     std::stringstream response;
     Json::Value jsonResponse;
@@ -406,11 +424,16 @@ std::string generateResponse(std::map<string, string> argumentList, string reque
         {
             jsonResponse = updatePlants(argumentList["type"], argumentList["state"], true);
         }
-       
     }
-
-    // standard repsonse end ----------------------------------------------
-
+    else if (requestType == "addRoom")
+    {
+        if (!argumentList["room"].empty())
+        {
+        
+            jsonResponse = addRoom(argumentList["room"]);
+        }
+        // standard repsonse end ----------------------------------------------
+    }
     if (jsonResponse.empty())
     {
 
@@ -496,6 +519,7 @@ int threadTimeOut()
 
 int main()
 {
+
     int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     int reuse = 1;
     if (setsockopt(serverSocket, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse)) < 0)
