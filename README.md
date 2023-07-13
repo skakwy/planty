@@ -24,3 +24,9 @@ This project is supposed to be a learner project for myself in first place. I'm 
 | Web  | -[x]  |
 | mac  | -[]  |
 | windows  | -[]  |
+
+| Planned | working on it |
+| ------------- | ------------- |
+| camera support  | - []  |
+| water pump support  | -[x] |
+| easy diy integration support  | -[]  |
