@@ -16,15 +16,7 @@ import {
 } from "@expo-google-fonts/poppins";
 
 //delete before commiting
-const firebaseConfig = {
-  apiKey: "AIzaSyDJRe3xPgWP-1cb4ZyAbtrdWpBaJSnumKg",
-  authDomain: "planty-717e0.firebaseapp.com",
-  projectId: "planty-717e0",
-  storageBucket: "planty-717e0.appspot.com",
-  messagingSenderId: "504763237812",
-  appId: "1:504763237812:web:0ac3b7fcf0c80a8c999ee1",
-  measurementId: "G-X9DJQYHGK6"
-};
+
 
 
 // Initialize Firebase
