@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>planty</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            overflow: hidden;
+            margin: 0px;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            height: 100vh;
+
+
+        }
+
+        input {
+            outline: none;
+            border-radius: 0px;
+            font-size: 18px;
+            border: none;
+            border-bottom: 1px solid gray;
+            width: 100%;
+        }
+
+        button {
+            outline: none;
+            border: none;
+            color: black;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            width: 100%;
+            border-radius: 6px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <input spellcheck="false" required id="ssidInput" placeholder="ssid/ Wifi name" />
+        <input required id="passwordInput" placeholder="password" />
+        <button id="button">Submit</button>
+    </div>
+    <script>
+        console.log("test")
+        const button = document.getElementById("button");
+        const ssidInput = document.getElementById("ssidInput");
+        const passwordInput = document.getElementById("passwordInput");
+
+        // Replace "ws://your-arduino-ip:8080" with the IP address of your Arduino
+        console.log("twst")
+        const ws = new WebSocket("ws://planty.local:8080");
+
+
+
+        button.addEventListener("click", () => {
+            // Send a message to the Arduino when the button is clicked
+            console.log("{ssid:" + ssidInput.value + ",password:" + passwordInput.value + "}")
+            data = "{ssid:\"" + ssidInput.value + "\",password: \"" + passwordInput.value + "\"}"
+            ws.send(stringToUtf8Bytes(data));
+        });
+    </script>
+</body>
+
+</html>
