@@ -1,4 +1,5 @@
 **Project is on hold right now**
+
 Plant Watering Software with C++ Server and React Native App
 
 This project is a comprehensive plant watering software solution that includes a C++ server and a mobile app developed with React Native. The software allows users to efficiently manage their plant watering schedules and monitor the health of their plants.
